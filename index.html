@@ -43,6 +43,203 @@
             overflow-x: hidden;
         }
 
+        /* TELAS DE LOGIN */
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-box {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-logo {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .login-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .login-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-light);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 14px;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            outline: none;
+            background: white;
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(201, 160, 220, 0.2);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(201, 160, 220, 0.4);
+        }
+
+        .btn-login:active {
+            transform: translateY(0);
+        }
+
+        .login-divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            gap: 10px;
+        }
+
+        .login-divider::before,
+        .login-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .login-divider-text {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .login-toggle {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-toggle-text {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .login-toggle-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .login-toggle-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .error-message {
+            background: rgba(245, 168, 168, 0.2);
+            color: #d32f2f;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 15px;
+            display: none;
+            border-left: 4px solid #d32f2f;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.3s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .success-message {
+            background: rgba(168, 213, 186, 0.2);
+            color: #2e7d32;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 15px;
+            display: none;
+            border-left: 4px solid #2e7d32;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* TELA PRINCIPAL */
+        .app-container {
+            display: none;
+        }
+
         /* Navbar */
         nav {
             background: rgba(250, 246, 241, 0.9);
@@ -132,6 +329,34 @@
             justify-content: center;
             font-size: 10px;
             font-weight: bold;
+        }
+
+        .logout-btn {
+            background: linear-gradient(135deg, var(--danger) 0%, #f08080 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 168, 168, 0.3);
+        }
+
+        .admin-badge {
+            background: linear-gradient(135deg, var(--info) 0%, #7dd3fc 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Container Principal */
@@ -369,10 +594,10 @@
 
         /* Posts */
         .post {
-            animation: slideIn 0.4s ease;
+            animation: slideInPost 0.4s ease;
         }
 
-        @keyframes slideIn {
+        @keyframes slideInPost {
             from {
                 opacity: 0;
                 transform: translateY(20px);
@@ -742,6 +967,9 @@
             nav {
                 padding: 0 15px;
             }
+            .login-box {
+                padding: 30px 20px;
+            }
         }
 
         /* Scrollbar Customizado */
@@ -765,152 +993,293 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav>
-        <a href="#" class="logo">
-            <i class="fas fa-rocket"></i> ManusSocial
-        </a>
-        <input type="text" class="search-bar" placeholder="🔍 Pesquisar na rede social...">
-        <div class="nav-actions">
-            <div class="nav-icon">
-                <i class="fas fa-bell"></i>
-                <span class="notification-badge">3</span>
+    <!-- TELA DE LOGIN - NOVO USUÁRIO -->
+    <div id="loginNewUser" class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <div class="login-logo">🚀</div>
+                <div class="login-title">ManusSocial</div>
+                <div class="login-subtitle">Crie sua conta e comece a compartilhar</div>
             </div>
-            <div class="nav-icon">
-                <i class="fas fa-envelope"></i>
+
+            <div id="errorNewUser" class="error-message"></div>
+            <div id="successNewUser" class="success-message"></div>
+
+            <form onsubmit="registerNewUser(event)">
+                <div class="form-group">
+                    <label class="form-label">Nome Completo</label>
+                    <input type="text" id="newUserName" class="form-input" placeholder="Seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">E-mail</label>
+                    <input type="email" id="newUserEmail" class="form-input" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Senha</label>
+                    <input type="password" id="newUserPassword" class="form-input" placeholder="Crie uma senha segura" required>
+                </div>
+
+                <button type="submit" class="btn-login">Criar Conta</button>
+            </form>
+
+            <div class="login-divider">
+                <span class="login-divider-text">Já tem conta?</span>
             </div>
-            <div class="nav-icon">
-                <i class="fas fa-user-circle"></i>
+
+            <div class="login-toggle">
+                <span class="login-toggle-text">
+                    <a class="login-toggle-link" onclick="switchToLogin()">Faça login aqui</a>
+                </span>
+            </div>
+
+            <div class="login-divider">
+                <span class="login-divider-text">É administrador?</span>
+            </div>
+
+            <div class="login-toggle">
+                <span class="login-toggle-text">
+                    <a class="login-toggle-link" onclick="switchToAdmin()">Acesso de Admin</a>
+                </span>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <!-- Container Principal -->
-    <div class="container">
-        <!-- Sidebar Esquerda -->
-        <aside class="sidebar">
-            <div class="card profile-card">
-                <div class="profile-avatar" onclick="openAvatarModal('profile')" title="Clique para editar seu avatar">
-                    <span id="profileEmoji">👩‍💻</span>
-                </div>
-                <div class="profile-name">Lidiane de Souza</div>
-                <div class="profile-title">Desenvolvedora Full Stack</div>
-                <div class="profile-stats">
-                    <div class="stat">
-                        <div class="stat-number">1.2K</div>
-                        <div class="stat-label">Seguidores</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">342</div>
-                        <div class="stat-label">Seguindo</div>
-                    </div>
-                </div>
+    <!-- TELA DE LOGIN - USUÁRIO EXISTENTE -->
+    <div id="loginExistingUser" class="login-container" style="display: none;">
+        <div class="login-box">
+            <div class="login-header">
+                <div class="login-logo">🚀</div>
+                <div class="login-title">ManusSocial</div>
+                <div class="login-subtitle">Bem-vindo de volta!</div>
             </div>
 
-            <div class="card">
-                <div class="menu-item">
-                    <i class="fas fa-home"></i>
-                    <span>Início</span>
-                </div>
-                <div class="menu-item">
-                    <i class="fas fa-fire"></i>
-                    <span>Explorar</span>
-                </div>
-                <div class="menu-item">
-                    <i class="fas fa-bookmark"></i>
-                    <span>Salvos</span>
-                </div>
-                <div class="menu-item">
-                    <i class="fas fa-users"></i>
-                    <span>Comunidades</span>
-                </div>
-                <div class="menu-item">
-                    <i class="fas fa-cog"></i>
-                    <span>Configurações</span>
-                </div>
-            </div>
-        </aside>
+            <div id="errorExistingUser" class="error-message"></div>
 
-        <!-- Feed Central -->
-        <main class="feed">
-            <!-- Create Post -->
-            <div class="card create-post">
-                <div class="post-input-wrapper">
-                    <div class="post-avatar-small" id="userAvatar" onclick="openAvatarModal('post')" title="Clique para editar seu avatar">
-                        <span id="postEmoji">👩‍💻</span>
+            <form onsubmit="loginExistingUser(event)">
+                <div class="form-group">
+                    <label class="form-label">E-mail</label>
+                    <input type="email" id="existingUserEmail" class="form-input" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Senha</label>
+                    <input type="password" id="existingUserPassword" class="form-input" placeholder="Sua senha" required>
+                </div>
+
+                <button type="submit" class="btn-login">Entrar</button>
+            </form>
+
+            <div class="login-divider">
+                <span class="login-divider-text">Não tem conta?</span>
+            </div>
+
+            <div class="login-toggle">
+                <span class="login-toggle-text">
+                    <a class="login-toggle-link" onclick="switchToRegister()">Criar conta</a>
+                </span>
+            </div>
+
+            <div class="login-divider">
+                <span class="login-divider-text">É administrador?</span>
+            </div>
+
+            <div class="login-toggle">
+                <span class="login-toggle-text">
+                    <a class="login-toggle-link" onclick="switchToAdmin()">Acesso de Admin</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA DE LOGIN - ADMINISTRADOR -->
+    <div id="loginAdmin" class="login-container" style="display: none;">
+        <div class="login-box">
+            <div class="login-header">
+                <div class="login-logo">🔐</div>
+                <div class="login-title">Painel Administrativo</div>
+                <div class="login-subtitle">Acesso restrito - lidiane.manoela.souza@escola.pr.gov.br</div>
+            </div>
+
+            <div id="errorAdmin" class="error-message"></div>
+
+            <form onsubmit="loginAdmin(event)">
+                <div class="form-group">
+                    <label class="form-label">E-mail Administrativo</label>
+                    <input type="email" id="adminEmail" class="form-input" placeholder="lidiane.manoela.souza@escola.pr.gov.br" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Senha</label>
+                    <input type="password" id="adminPassword" class="form-input" placeholder="Sua senha" required>
+                </div>
+
+                <button type="submit" class="btn-login">Acessar Painel</button>
+            </form>
+
+            <div class="login-divider">
+                <span class="login-divider-text">Não é administrador?</span>
+            </div>
+
+            <div class="login-toggle">
+                <span class="login-toggle-text">
+                    <a class="login-toggle-link" onclick="switchToRegister()">Criar conta de usuário</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- APLICAÇÃO PRINCIPAL -->
+    <div id="mainApp" class="app-container">
+        <!-- Navbar -->
+        <nav>
+            <a href="#" class="logo">
+                <i class="fas fa-rocket"></i> ManusSocial
+            </a>
+            <input type="text" class="search-bar" placeholder="🔍 Pesquisar na rede social...">
+            <div class="nav-actions">
+                <div id="adminIndicator" style="display: none;">
+                    <span class="admin-badge">👑 Administrador</span>
+                </div>
+                <div class="nav-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="nav-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <button class="logout-btn" onclick="logout()">Sair</button>
+            </div>
+        </nav>
+
+        <!-- Container Principal -->
+        <div class="container">
+            <!-- Sidebar Esquerda -->
+            <aside class="sidebar">
+                <div class="card profile-card">
+                    <div class="profile-avatar" onclick="openAvatarModal('profile')" title="Clique para editar seu avatar">
+                        <span id="profileEmoji">👩‍💻</span>
                     </div>
-                    <div class="post-input-area">
-                        <textarea id="postInput" class="post-textarea" rows="3" placeholder="No que você está pensando, Lidiane?"></textarea>
-                        <div class="post-actions">
-                            <div class="post-tools">
-                                <button class="tool-btn" title="Emoji">
-                                    <i class="fas fa-smile"></i>
-                                </button>
-                                <button class="tool-btn" title="Link">
-                                    <i class="fas fa-link"></i>
-                                </button>
-                                <button class="tool-btn" title="Hashtag">
-                                    <i class="fas fa-hashtag"></i>
-                                </button>
-                            </div>
-                            <button class="btn-publish" onclick="createPost()">Publicar</button>
+                    <div class="profile-name" id="profileName">Usuário</div>
+                    <div class="profile-title" id="profileTitle">Membro da comunidade</div>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-number">1.2K</div>
+                            <div class="stat-label">Seguidores</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">342</div>
+                            <div class="stat-label">Seguindo</div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Posts Container -->
-            <div id="postsContainer">
-                <!-- Posts serão inseridos aqui dinamicamente -->
-            </div>
-        </main>
-
-        <!-- Sidebar Direita -->
-        <aside class="widgets">
-            <div class="card">
-                <h3 style="margin-bottom: 15px; font-size: 16px;">📈 Tendências</h3>
-                <div class="trending-item">
-                    <div class="trending-category">Tecnologia</div>
-                    <div class="trending-title">#WebDevelopment</div>
-                    <div class="trending-count">45.2K posts</div>
-                </div>
-                <div class="trending-item">
-                    <div class="trending-category">Programação</div>
-                    <div class="trending-title">#JavaScript</div>
-                    <div class="trending-count">123K posts</div>
-                </div>
-                <div class="trending-item">
-                    <div class="trending-category">Design</div>
-                    <div class="trending-title">#UX/UI</div>
-                    <div class="trending-count">89.5K posts</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3 style="margin-bottom: 15px; font-size: 16px;">👥 Sugestões</h3>
-                <div style="margin-bottom: 15px;">
-                    <div style="margin-bottom: 10px;">
-                        <div style="font-weight: 600; margin-bottom: 3px;">Carlos Oliveira</div>
-                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Desenvolvedor Python</div>
-                        <button class="follow-btn">Seguir</button>
+                <div class="card">
+                    <div class="menu-item">
+                        <i class="fas fa-home"></i>
+                        <span>Início</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-fire"></i>
+                        <span>Explorar</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-bookmark"></i>
+                        <span>Salvos</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-users"></i>
+                        <span>Comunidades</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
                     </div>
                 </div>
-                <div style="margin-bottom: 15px;">
-                    <div style="margin-bottom: 10px;">
-                        <div style="font-weight: 600; margin-bottom: 3px;">Maria Silva</div>
-                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Designer Gráfica</div>
-                        <button class="follow-btn">Seguir</button>
+            </aside>
+
+            <!-- Feed Central -->
+            <main class="feed">
+                <!-- Create Post -->
+                <div class="card create-post">
+                    <div class="post-input-wrapper">
+                        <div class="post-avatar-small" id="userAvatar" onclick="openAvatarModal('post')" title="Clique para editar seu avatar">
+                            <span id="postEmoji">👩‍💻</span>
+                        </div>
+                        <div class="post-input-area">
+                            <textarea id="postInput" class="post-textarea" rows="3" placeholder="No que você está pensando?"></textarea>
+                            <div class="post-actions">
+                                <div class="post-tools">
+                                    <button class="tool-btn" title="Emoji">
+                                        <i class="fas fa-smile"></i>
+                                    </button>
+                                    <button class="tool-btn" title="Link">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                    <button class="tool-btn" title="Hashtag">
+                                        <i class="fas fa-hashtag"></i>
+                                    </button>
+                                </div>
+                                <button class="btn-publish" onclick="createPost()">Publicar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div style="margin-bottom: 10px;">
-                        <div style="font-weight: 600; margin-bottom: 3px;">João Pereira</div>
-                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Especialista em DevOps</div>
-                        <button class="follow-btn">Seguir</button>
+
+                <!-- Posts Container -->
+                <div id="postsContainer">
+                    <!-- Posts serão inseridos aqui dinamicamente -->
+                </div>
+            </main>
+
+            <!-- Sidebar Direita -->
+            <aside class="widgets">
+                <div class="card">
+                    <h3 style="margin-bottom: 15px; font-size: 16px;">📈 Tendências</h3>
+                    <div class="trending-item">
+                        <div class="trending-category">Tecnologia</div>
+                        <div class="trending-title">#WebDevelopment</div>
+                        <div class="trending-count">45.2K posts</div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-category">Programação</div>
+                        <div class="trending-title">#JavaScript</div>
+                        <div class="trending-count">123K posts</div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-category">Design</div>
+                        <div class="trending-title">#UX/UI</div>
+                        <div class="trending-count">89.5K posts</div>
                     </div>
                 </div>
-            </div>
-        </aside>
+
+                <div class="card">
+                    <h3 style="margin-bottom: 15px; font-size: 16px;">👥 Sugestões</h3>
+                    <div style="margin-bottom: 15px;">
+                        <div style="margin-bottom: 10px;">
+                            <div style="font-weight: 600; margin-bottom: 3px;">Carlos Oliveira</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Desenvolvedor Python</div>
+                            <button class="follow-btn">Seguir</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <div style="margin-bottom: 10px;">
+                            <div style="font-weight: 600; margin-bottom: 3px;">Maria Silva</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Designer Gráfica</div>
+                            <button class="follow-btn">Seguir</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="margin-bottom: 10px;">
+                            <div style="font-weight: 600; margin-bottom: 3px;">João Pereira</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Especialista em DevOps</div>
+                            <button class="follow-btn">Seguir</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
     </div>
 
     <!-- Modal de Customização de Avatar -->
@@ -962,10 +1331,46 @@
     </div>
 
     <script>
-        // Variáveis globais
+        // ===== SISTEMA DE AUTENTICAÇÃO =====
+        const ADMIN_EMAIL = 'lidiane.manoela.souza@escola.pr.gov.br';
+        const ADMIN_PASSWORD = 'admin123'; // Senha padrão (em produção seria mais seguro)
+
+        let currentUser = null;
+        let isAdmin = false;
         let currentEmoji = '👩‍💻';
         let currentColor = 'linear-gradient(135deg, #c9a0dc 0%, #f5a8d8 100%)';
         let avatarTarget = 'profile';
+
+        // Dados dos usuários (simulado - em produção seria um banco de dados)
+        let users = [
+            {
+                id: 1,
+                name: 'Maria Silva',
+                email: 'maria@email.com',
+                password: 'senha123',
+                emoji: '🎨',
+                color: 'linear-gradient(135deg, #ffc8a2 0%, #ffb88c 100%)',
+                title: 'Designer Gráfica'
+            },
+            {
+                id: 2,
+                name: 'João Pereira',
+                email: 'joao@email.com',
+                password: 'senha123',
+                emoji: '⚡',
+                color: 'linear-gradient(135deg, #a8d5f5 0%, #b8d5f5 100%)',
+                title: 'Especialista em DevOps'
+            },
+            {
+                id: 3,
+                name: 'Carlos Oliveira',
+                email: 'carlos@email.com',
+                password: 'senha123',
+                emoji: '🐍',
+                color: 'linear-gradient(135deg, #a8d5ba 0%, #c8e6c9 100%)',
+                title: 'Desenvolvedor Python'
+            }
+        ];
 
         // Dados dos posts
         let posts = [
@@ -1010,11 +1415,165 @@
             }
         ];
 
-        // Funções do Modal
+        // ===== FUNÇÕES DE AUTENTICAÇÃO =====
+        function switchToRegister() {
+            document.getElementById('loginNewUser').style.display = 'flex';
+            document.getElementById('loginExistingUser').style.display = 'none';
+            document.getElementById('loginAdmin').style.display = 'none';
+        }
+
+        function switchToLogin() {
+            document.getElementById('loginNewUser').style.display = 'none';
+            document.getElementById('loginExistingUser').style.display = 'flex';
+            document.getElementById('loginAdmin').style.display = 'none';
+        }
+
+        function switchToAdmin() {
+            document.getElementById('loginNewUser').style.display = 'none';
+            document.getElementById('loginExistingUser').style.display = 'none';
+            document.getElementById('loginAdmin').style.display = 'flex';
+        }
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.classList.add('show');
+            setTimeout(() => {
+                errorElement.classList.remove('show');
+            }, 4000);
+        }
+
+        function showSuccess(elementId, message) {
+            const successElement = document.getElementById(elementId);
+            successElement.textContent = message;
+            successElement.classList.add('show');
+            setTimeout(() => {
+                successElement.classList.remove('show');
+            }, 2000);
+        }
+
+        function registerNewUser(event) {
+            event.preventDefault();
+            const name = document.getElementById('newUserName').value;
+            const email = document.getElementById('newUserEmail').value;
+            const password = document.getElementById('newUserPassword').value;
+
+            // Verificar se o email já existe
+            if (users.some(u => u.email === email)) {
+                showError('errorNewUser', '❌ Este e-mail já está registrado!');
+                return;
+            }
+
+            // Criar novo usuário
+            const newUser = {
+                id: users.length + 1,
+                name: name,
+                email: email,
+                password: password,
+                emoji: '👩‍💻',
+                color: 'linear-gradient(135deg, #c9a0dc 0%, #f5a8d8 100%)',
+                title: 'Membro da comunidade'
+            };
+
+            users.push(newUser);
+            showSuccess('successNewUser', '✅ Conta criada com sucesso! Faça login agora.');
+            
+            setTimeout(() => {
+                document.getElementById('newUserName').value = '';
+                document.getElementById('newUserEmail').value = '';
+                document.getElementById('newUserPassword').value = '';
+                switchToLogin();
+            }, 2000);
+        }
+
+        function loginExistingUser(event) {
+            event.preventDefault();
+            const email = document.getElementById('existingUserEmail').value;
+            const password = document.getElementById('existingUserPassword').value;
+
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (!user) {
+                showError('errorExistingUser', '❌ E-mail ou senha incorretos!');
+                return;
+            }
+
+            currentUser = user;
+            isAdmin = false;
+            loadApp();
+        }
+
+        function loginAdmin(event) {
+            event.preventDefault();
+            const email = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+
+            if (email !== ADMIN_EMAIL || password !== ADMIN_PASSWORD) {
+                showError('errorAdmin', '❌ Credenciais de administrador inválidas!');
+                return;
+            }
+
+            currentUser = {
+                id: 0,
+                name: 'Lidiane de Souza',
+                email: email,
+                emoji: '👑',
+                color: 'linear-gradient(135deg, #a8d5f5 0%, #b8d5f5 100%)',
+                title: 'Administradora'
+            };
+            isAdmin = true;
+            loadApp();
+        }
+
+        function loadApp() {
+            // Ocultar telas de login
+            document.getElementById('loginNewUser').style.display = 'none';
+            document.getElementById('loginExistingUser').style.display = 'none';
+            document.getElementById('loginAdmin').style.display = 'none';
+
+            // Mostrar aplicação
+            document.getElementById('mainApp').style.display = 'block';
+
+            // Atualizar perfil
+            document.getElementById('profileName').textContent = currentUser.name;
+            document.getElementById('profileTitle').textContent = currentUser.title || 'Membro da comunidade';
+            document.getElementById('profileEmoji').textContent = currentUser.emoji;
+            document.getElementById('postEmoji').textContent = currentUser.emoji;
+            document.getElementById('postInput').placeholder = `No que você está pensando, ${currentUser.name.split(' ')[0]}?`;
+
+            // Atualizar cores do avatar
+            document.querySelector('.profile-avatar').style.background = currentUser.color;
+            document.getElementById('userAvatar').style.background = currentUser.color;
+
+            // Mostrar/ocultar indicador de admin
+            if (isAdmin) {
+                document.getElementById('adminIndicator').style.display = 'block';
+            } else {
+                document.getElementById('adminIndicator').style.display = 'none';
+            }
+
+            // Renderizar posts
+            renderPosts();
+        }
+
+        function logout() {
+            currentUser = null;
+            isAdmin = false;
+            document.getElementById('mainApp').style.display = 'none';
+            document.getElementById('loginNewUser').style.display = 'flex';
+            document.getElementById('existingUserEmail').value = '';
+            document.getElementById('existingUserPassword').value = '';
+            document.getElementById('newUserName').value = '';
+            document.getElementById('newUserEmail').value = '';
+            document.getElementById('newUserPassword').value = '';
+        }
+
+        // ===== FUNÇÕES DO MODAL DE AVATAR =====
         function openAvatarModal(target) {
             avatarTarget = target;
             document.getElementById('avatarModal').style.display = 'block';
             currentEmoji = target === 'profile' ? document.getElementById('profileEmoji').textContent : document.getElementById('postEmoji').textContent;
+            currentColor = document.getElementById('userAvatar').style.background;
             updatePreview();
         }
 
@@ -1050,6 +1609,8 @@
                 document.getElementById('postEmoji').textContent = currentEmoji;
                 document.getElementById('userAvatar').style.background = currentColor;
             }
+            currentUser.emoji = currentEmoji;
+            currentUser.color = currentColor;
             closeAvatarModal();
         }
 
@@ -1061,7 +1622,7 @@
             }
         }
 
-        // Funções do Feed
+        // ===== FUNÇÕES DO FEED =====
         function renderPosts() {
             const postsContainer = document.getElementById('postsContainer');
             postsContainer.innerHTML = '';
@@ -1120,10 +1681,10 @@
 
             const newPost = {
                 id: posts.length + 1,
-                author: "Lidiane de Souza",
-                title: "Desenvolvedora Full Stack",
+                author: currentUser.name,
+                title: currentUser.title || 'Membro da comunidade',
                 emoji: document.getElementById('postEmoji').textContent,
-                color: document.getElementById('userAvatar').style.background || 'linear-gradient(135deg, #c9a0dc 0%, #f5a8d8 100%)',
+                color: document.getElementById('userAvatar').style.background,
                 content: content,
                 time: "agora",
                 likes: 0,
@@ -1153,11 +1714,9 @@
 
         // Inicializar
         document.addEventListener('DOMContentLoaded', function() {
-            renderPosts();
-            
             // Permitir Enter para publicar
-            document.getElementById('postInput').addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' && !e.shiftKey) {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey && document.activeElement.id === 'postInput') {
                     e.preventDefault();
                     createPost();
                 }
